@@ -42,6 +42,10 @@ function App() {
     }
   };
 
+  const handleRemoveItemFromSchema = (index) => {
+    setSchema((prevSchema) => prevSchema.filter((item, i) => i !== index));
+  };
+
   const handleSaveSchema = () => {
     if (segmentName.trim() === "") {
       alert("Please provide a segment name.");
@@ -77,14 +81,16 @@ function App() {
         }}
       >
         {schema.map((item, index) => (
-          <DropDown
-            key={index}
-            value={item.value}
-            options={options}
-            callback={(selectedValue) =>
-              handleDropDownChange(index, selectedValue)
-            }
-          />
+          <div key={index} style={{ display: "flex" }}>
+            <DropDown
+              value={item.value}
+              options={options}
+              callback={(selectedValue) =>
+                handleDropDownChange(index, selectedValue)
+              }
+            />
+            <button onClick={() => handleRemoveItemFromSchema(index)}>-</button>
+          </div>
         ))}
       </div>
 

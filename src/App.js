@@ -72,16 +72,9 @@ function App() {
         />
       </div>
       <br />
-      <div
-        style={{
-          outline: "1px solid blue",
-          width: "fit-content",
-          padding: "1rem",
-          margin: "1rem",
-        }}
-      >
+      <div className="SchemaContainer">
         {schema.map((item, index) => (
-          <div key={index} style={{ display: "flex" }}>
+          <div key={index} className="SchemaItem">
             <DropDown
               value={item.value}
               options={options}

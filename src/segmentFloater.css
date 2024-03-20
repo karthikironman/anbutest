@@ -1,0 +1,48 @@
+/* App.css */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  width: fit-content;
+  height: 100%;
+  overflow: auto;
+  padding: 2rem;
+  outline: 1px solid black;
+  position: absolute;
+  right: -100%; /* Start off the screen */
+  top: 0;
+  box-sizing: border-box;
+  animation: slideInFromRight 0.5s ease forwards; /* Animation to slide in */
+}
+
+@keyframes slideInFromRight {
+  from {
+    right: -100%; /* Start off the screen */
+  }
+  to {
+    right: 0; /* Slide in to the right */
+  }
+}
+
+.SchemaContainer {
+  outline: 1px solid blue;
+  width: fit-content;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.SchemaItem {
+  display: flex;
+}
+
+.SchemaItem > * {
+  margin-right: 5px;
+}
+
+.addItemLink{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
